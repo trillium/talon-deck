@@ -1,34 +1,17 @@
-.button {
-    display: inline-block;
-    box-sizing: border-box;
-    height: 5rem;
-    width: 5rem;
-    border: 0.25rem inset grey;
-    border-radius: .6rem;
-    vertical-align: middle;
-    padding: 0;
-    margin: 1rem;
-}
-
-.button > div {
-    width: 100%;
-    height: 100%;
-    border-radius: .5rem;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+.border-inset {
+  border-style: inset;
 }
 
 .button .icon-missing {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 button.button {
-    background-color: transparent;
-    border-color: gold;
+  background-color: transparent;
+  border-color: gold;
 }
 
 button.button[disabled] {
-    border-color: black;
-    border-style: solid;
+  border-color: black;
+  border-style: solid;
 }

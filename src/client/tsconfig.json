@@ -1,21 +1,16 @@
 {
-    "compilerOptions": {
-        "module": "es6",
-        "target": "es6",
-        "jsx": "react",
-        "moduleResolution": "node",
-        "strict": true,
-        "noImplicitAny": true,
-        "noEmit": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "types": [
-            "node",
-            "webpack-env"
-        ]
-    },
-    "include": [
-        "./*.ts",
-        "./*.tsx"
-    ]
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react",
+    "strict": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "webpack-env", "vite/client"]
+  },
+  "include": ["./*.ts", "./*.tsx"]
 }
