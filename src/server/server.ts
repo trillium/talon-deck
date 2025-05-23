@@ -2,6 +2,8 @@ import cookieParser from "cookie-parser";
 import csrf from "csurf";
 import express from "express";
 import fs from "fs";
+import path from "path";
+
 import helmet from "helmet";
 import http from "http";
 import { Server } from "socket.io";
@@ -30,8 +32,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(basicAuth);
 app.use(hostValidation());
-app.use(csrf({ cookie: true }));
-app.use("/", express.static(__dirname));
+app.use((csrf as any)({ cookie: true }));
+app.use("/", express.static(path.resolve(__dirname, "../client")));
 
 app.get("/rest/csrfToken", (req, res) => {
   res.json({ csrfToken: req.csrfToken() });
@@ -74,3 +76,19 @@ setInterval(() => {
     io.emit("update");
   }
 }, 1000);
+
+// Graceful shutdown handling
+const shutdown = () => {
+  log.info("Shutting down server gracefully...");
+  io.close(() => {
+    log.info("WebSocket server closed.");
+    server.close(() => {
+      log.info("HTTP server closed.");
+      process.exit(0);
+    });
+  });
+};
+
+// Handle termination signals
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);

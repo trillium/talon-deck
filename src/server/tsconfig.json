@@ -1,15 +1,14 @@
 {
-    "compilerOptions": {
-        "module": "CommonJS",
-        "target": "es6",
-        "moduleResolution": "node",
-        "strict": true,
-        "noImplicitAny": true,
-        "noEmit": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-    },
-    "include": [
-        "**.ts",
-    ]
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "es6",
+    "strict": true,
+    "noImplicitAny": true,
+    "noEmit": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "outDir": "../../out/server",
+    "rootDir": "../../"
+  },
+  "include": ["**.ts"]
 }
