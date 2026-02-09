@@ -1,10 +1,12 @@
-import { Settings } from "./src/server/types";
+import type { Settings } from "./lib/types";
 
-export default {
+const settings: Settings = {
   host: "localhost",
   port: 3000,
   // basicAuth: {
   //   username: "admin",
   //   password: "password",
   // },
-} as Settings;
+};
+
+export default settings;
