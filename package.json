@@ -3,9 +3,9 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0",
     "build": "bun run icons && next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0",
     "icons": "bun scripts/generate-icon-manifest.ts",
     "lint": "biome check .",
     "format": "biome format --write .",
