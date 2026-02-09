@@ -1,0 +1,24 @@
+list: user.slash_command
+-
+new: new
+resume: resume
+check: check
+fix: fix
+test: test
+build: build
+run: run
+help: help
+debug: debug
+commit: commit
+push: push
+pull: pull
+models: models
+model: model
+exit: exit
+orchestrate: ralph-orchestrate
+ralph: ralph
+init: init
+in it: init
+clear: clear
+new: new
+context:  context

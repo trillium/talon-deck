@@ -13,7 +13,7 @@ export default function Button({ button }: Parameters) {
 
   if (!button.actionId) {
     return (
-      <div className="inline-block box-border rounded-md align-middle p-0 m-4 button text-red-500 place-content-center h-20 w-20 text-6xl border-4 border-inset border-gray-500">
+      <div className="inline-block box-border rounded-md align-middle p-0 m-4 button text-red-500 dark:text-red-400 place-content-center h-20 w-20 text-6xl border-4 border-inset border-gray-500 dark:border-gray-600">
         {createInnerDiv(button.icon)}
       </div>
     );
@@ -41,7 +41,7 @@ export default function Button({ button }: Parameters) {
   return (
     <button
       type="button"
-      className="inline-block box-border rounded-md align-middle p-0 m-4 button text-red-500 place-content-center h-20 w-20 text-6xl bg-gray-500 border-4 border-inset border-gray-500"
+      className="inline-block box-border rounded-md align-middle p-0 m-4 button text-red-500 dark:text-red-400 place-content-center h-20 w-20 text-6xl bg-gray-500 dark:bg-gray-700 border-4 border-inset border-gray-500 dark:border-gray-600"
       disabled={loading}
       onClick={() => performAction()}
     >

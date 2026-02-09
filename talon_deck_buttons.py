@@ -51,9 +51,9 @@ app: vscode
 
 @ctx.action_class("user")
 class Actions:
-    # def sound_microphone_enable_event():
-    #     actions.user.talon_deck_update()
-    #     actions.next()
+    def sound_microphone_enable_event():
+        actions.user.talon_deck_update()
+        actions.next()
 
     def talon_deck_get_buttons():
         return get_microphone_buttons()
@@ -87,40 +87,40 @@ class SleepActions:
         ]
 
 
-# @ctx_game.action_class("user")
-# class GameActions:
-#     def talon_deck_get_buttons():
-#         return [
-#             *actions.next(),
-#             {"icon": "gameMode", "action": "user.game_mode_disable()", "order": 0},
-#         ]
+@ctx_game.action_class("user")
+class GameActions:
+    def talon_deck_get_buttons():
+        return [
+            *actions.next(),
+            {"icon": "gameMode", "action": "user.game_mode_disable()", "order": 0},
+        ]
 
 
-# @ctx_game_voip_listening.action_class("user")
-# class GameVoipListeningActions:
-#     def talon_deck_get_buttons():
-#         return [
-#             *actions.next(),
-#             {"icon": "listening", "action": "user.game_toggle_mute()", "order": 1},
-#         ]
+@ctx_game_voip_listening.action_class("user")
+class GameVoipListeningActions:
+    def talon_deck_get_buttons():
+        return [
+            *actions.next(),
+            {"icon": "listening", "action": "user.game_toggle_mute()", "order": 1},
+        ]
 
 
-# @ctx_eye_tracker.action_class("user")
-# class EyeTrackerActions:
-#     def talon_deck_get_buttons() -> list[dict]:
-#         return [
-#             *actions.next(),
-#             {"icon": "eyeTracking"},
-#         ]
+@ctx_eye_tracker.action_class("user")
+class EyeTrackerActions:
+    def talon_deck_get_buttons() -> list[dict]:
+        return [
+            *actions.next(),
+            {"icon": "eyeTracking"},
+        ]
 
 
-# @ctx_eye_tracker_frozen.action_class("user")
-# class EyeTrackerFrozenActions:
-#     def talon_deck_get_buttons() -> list[dict]:
-#         return [
-#             *actions.next(),
-#             {"icon": "eyeTracking2", "action": "user.mouse_control_toggle(True)"},
-#         ]
+@ctx_eye_tracker_frozen.action_class("user")
+class EyeTrackerFrozenActions:
+    def talon_deck_get_buttons() -> list[dict]:
+        return [
+            *actions.next(),
+            {"icon": "eyeTracking2", "action": "user.mouse_control_toggle(True)"},
+        ]
 
 
 @ctx_vscode.action_class("user")

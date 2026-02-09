@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .border-inset {
   border-style: inset;
 }
@@ -15,5 +17,14 @@ button.button {
 
 button.button[disabled] {
   border-color: black;
+  border-style: solid;
+}
+
+button.button:where(.dark, .dark *) {
+  border-color: #d4a017;
+}
+
+button.button[disabled]:where(.dark, .dark *) {
+  border-color: #374151;
   border-style: solid;
 }

@@ -34,14 +34,18 @@ export default function Buttons() {
   }, []);
 
   if (!connected) {
-    return <h1>Disconnected</h1>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="text-2xl text-gray-500 dark:text-gray-400">Disconnected</h1>
+      </div>
+    );
   }
 
   return (
-    <>
+    <div className="flex flex-wrap justify-center p-4">
       {buttons.map((button) => (
         <Button key={button.icon} button={button} />
       ))}
-    </>
+    </div>
   );
 }
