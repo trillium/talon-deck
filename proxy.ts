@@ -58,10 +58,10 @@ function validateHost(host: string | null): string | null {
       return `Expected host header '${host}' to end with port '${settings.port}'`;
     }
     if (hostname === "localhost") hostname = "127.0.0.1";
-    if (!isIP(hostname)) {
-      return `Host '${hostname}' is not a valid IP address`;
+    if (isIP(hostname) || hostname.endsWith(".ts.net")) {
+      return null;
     }
-    return null;
+    return `Host '${hostname}' is not allowed`;
   }
 
   const validIPs = [settings.host];
