@@ -1,4 +1,4 @@
-node_modules
-out
-.next
-bun.lock
+deck/node_modules
+deck/out
+deck/.next
+deck/bun.lock

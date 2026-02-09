@@ -1,6 +1,7 @@
 pre-commit:
   commands:
     lint:
+      root: deck/
       run: bunx biome check --staged --no-errors-on-unmatched
       stage_fixed: true
 
